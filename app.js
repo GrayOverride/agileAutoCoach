@@ -1,11 +1,11 @@
 var SlackBot = require('slackbots');
-var env = require("./enviromentVars.json")
+var env = require("./env.json")
 
-console.log(process.env.NODE)
 
 // create a bot
 var bot = new SlackBot({
-
+  token = env.token;
+  name = env.name;
 });
 
 var chooseOne = function(input, callback){
