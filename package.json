@@ -1,0 +1,14 @@
+{
+  "name": "agileautocoach",
+  "version": "1.0.0",
+  "description": "0.0.1",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "grayoverride",
+  "license": "ISC",
+  "dependencies": {
+    "slackbots": "^0.5.1"
+  }
+}
