@@ -1,11 +1,16 @@
 var SlackBot = require('slackbots');
-var env = require("./env.json")
+var fs = require('fs');
 
+if (fs.existsSync('./env.json')) {
+  var env = require("./env.json")
+}else {
+  var env = process.env;
+}
 
 // create a bot
 var bot = new SlackBot({
   token: env.token,
-  name: env.name
+  name: 'coachBot'
 });
 
 var chooseOne = function(input, callback){
