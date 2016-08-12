@@ -17,6 +17,7 @@ var chooseOne = function(input, callback){
   console.log(input);
     if (input) {
       var array = input.split('or');
+      console.log(array);
       var arrSize = array.length;
       var selected = Math.floor((Math.random() * arrSize) + 0);
       callback(array[selected])
@@ -35,7 +36,7 @@ bot.on('start', function() {
     //bot.postMessageToChannel('ziggy', 'meow meow!', params);
 
     // define existing username instead of 'user_name'
-    bot.postMessageToUser('vandamm', 'meow!', params);
+    bot.postMessageToUser('vandamm', 'I LIVE', params);
 
     // define private group instead of 'private_group', where bot exist
     //bot.postMessageToGroup('private_group', 'meow!', params);
@@ -56,7 +57,8 @@ bot.on('start', function() {
               if (parsed.indexOf('decide')>-1){
                 var list = parsed.replace(/decide/gi, "");
                 chooseOne(list, function(result){
-                    bot.postMessageToChannel('ziggy ', result, params);
+                  console.log(result);
+                    bot.postMessageToUser('vandamm',result, params);
                 })
               }
               //  bot.postMessageToUser('vandamm', 'hello you', params);
